@@ -51,6 +51,11 @@ NSString *txtFieldInput;
     [[NSNotificationCenter defaultCenter]removeObserver:self name:kcNotificationResponseData object:nil];
 }
 
+/**
+ *  Takes the data from notification and parse it NSDictionary
+ *
+ *  @param notification notification with JSON Data
+ */
 - (void) parseData:(NSNotification*)notification
 {
     NSError *error = nil;
@@ -61,6 +66,11 @@ NSString *txtFieldInput;
     [self displayData:self.jsonDataDictionary];
 }
 
+/**
+ *  Takes the NSDictionary Object and sets the label and hides the keyboard
+ *
+ *  @param json JSON data in NSDictionary format
+ */
 - (void) displayData:(NSDictionary*)json
 {
     NSLog(@"%@",json);
@@ -74,6 +84,11 @@ NSString *txtFieldInput;
     [self.view endEditing:YES];
 }
 
+/**
+ *  Initializes the SALIPLocationFinder Class and gets the JSON Data
+ *
+ *  @param sender button attributes
+ */
 - (IBAction)onCheckButtonClick:(UIButton *)sender
 {
     // Get IP Address from User
